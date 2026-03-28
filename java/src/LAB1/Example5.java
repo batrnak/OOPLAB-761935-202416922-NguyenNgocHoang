@@ -1,7 +1,8 @@
-import javax.swing.JOptionPane;
-import java.util.Scanner;
+package LAB1;
 
-public class Exercise5 {
+import javax.swing.JOptionPane;
+
+public class Example5 {
     public static void main(String[] args) {
         String strNum1 ;
         String strNum2 ;

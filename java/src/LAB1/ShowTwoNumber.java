@@ -1,3 +1,5 @@
+package LAB1;
+
 import javax.swing.JOptionPane;
 public class ShowTwoNumber {
     public static void main(String[] args) {
