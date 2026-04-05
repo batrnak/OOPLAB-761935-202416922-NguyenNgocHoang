@@ -1,5 +1,5 @@
 - Khi nhấn Cancel: Chương trình hiển thị ra dialog với nội dung "You've chosen: No"
-- Dểđiều chỉnh lựa chọn người dùng: cần thay đổi code đoạn biến option. Chỉ hiển thị 2 lựa chọn Yes vfa No ( hoặc I do và I don't):
+- Để điều chỉnh lựa chọn người dùng: cần thay đổi code đoạn biến option. Chỉ hiển thị 2 lựa chọn Yes và No ( hoặc I do và I don't):
 + Chỉ 2 lựa chọn Yes, No
 int option = JOptionPane.showConfirmDialog(
                 null,
