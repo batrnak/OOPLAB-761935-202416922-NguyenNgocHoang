@@ -1,4 +1,4 @@
-package LAB2;
+package hust.soict.hedspi.aims.Design;
 
 public class DigitalVideoDisc {
     private String title;

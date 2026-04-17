@@ -1,4 +1,4 @@
-package LAB2;
+package hust.soict.hedspi.aims.Design;
 
 public class Cart {
     public static final int MAX_NUMBER_ORDERED = 20;
