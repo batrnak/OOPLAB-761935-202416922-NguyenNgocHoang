@@ -65,12 +65,45 @@ public class Cart {
         }
         return total;
     }
+    public String toString( DigitalVideoDisc[] dvdList) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ordered Items:\n");
+        for (int i = 0; i < qtyOrdered; i++) {
+            sb.append((i + 1) + " " + itemsOrdered[i].getTitle() +
+                    ": " + itemsOrdered[i].getCost() + " $\n");
+        }
+        sb.append("Total cost: " + totalCost() + " $");
+        return sb.toString();
+    }
+
+    public void SearchByTitle(String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getTitle().equals(title)) {
+                System.out.println("The disc with title " + title + " is in the cart");
+                return;
+            }
+        }
+        System.out.println("The disc with title " + title + " is not in the cart");
+    }
+    public void SearchById(int id) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getId() == id) {
+                System.out.println("The disc with ID " + id + " is in the cart");
+                return;
+            }
+        }
+        System.out.println("The disc with ID " + id + " is not in the cart");
+    }
     public void print() {
         System.out.println("Ordered Items:");
 
         for (int i = 0; i < qtyOrdered; i++) {
-            System.out.println((i + 1) +" "+ itemsOrdered[i].getTitle() +
-                    ": " + itemsOrdered[i].getCost() + " $");
+            System.out.println((i + 1) + " " + itemsOrdered[i].getTitle() +
+                   "- " + itemsOrdered[i].getTitle() +
+                    "- " + itemsOrdered[i].getCategory() +
+                    "- " + itemsOrdered[i].getDirector() +
+                    "- " + itemsOrdered[i].getLength() +
+                    "- " + itemsOrdered[i].getCost() + " $");
         }
         System.out.println("Total cost: " + totalCost() + " $");
     }

@@ -94,4 +94,10 @@ public class DigitalVideoDisc {
         this.id = ++nbDigitalVideoDiscs;
     }
 
+    public boolean isMatch(String title) {
+        return this.title.equals(title);
+    }
+    public boolean isMatch(int id) {
+        return this.id == id;
+    }
 }
