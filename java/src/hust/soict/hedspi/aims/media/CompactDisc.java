@@ -3,7 +3,7 @@ package hust.soict.hedspi.aims.media;
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable{
-    private String artist;
+    private final String artist;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
     public CompactDisc(String director, int length, String title, String category, float cost, int id) {

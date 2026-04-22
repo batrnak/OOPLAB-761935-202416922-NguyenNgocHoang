@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims.cart;
 import hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Cart {
     public static final int MAX_NUMBER_ORDERED = 20;
@@ -29,8 +30,8 @@ public class Cart {
 
     public float totalCost() {
         float total = 0;
-        for (int i = 0; i < itemsOrdered.size(); i++) {
-            total += itemsOrdered.get(i).getCost();
+        for (Media media : itemsOrdered) {
+            total += media.getCost();
         }
         return total;
     }
@@ -38,16 +39,15 @@ public class Cart {
         StringBuilder sb = new StringBuilder();
         sb.append("Ordered Items:\n");
         for (int i = 0; i < itemsOrdered.size(); i++) {
-            sb.append((i + 1) + " " + itemsOrdered.get(i).getTitle() +
-                    ": " + itemsOrdered.get(i).getCost() + " $\n");
+            sb.append((i + 1)).append(" ").append(itemsOrdered.get(i).getTitle()).append(": ").append(itemsOrdered.get(i).getCost()).append(" $\n");
         }
-        sb.append("Total cost: " + totalCost() + " $");
+        sb.append("Total cost: ").append(totalCost()).append(" $");
         return sb.toString();
     }
 
     public void SearchByTitle(String title) {
-        for (int i = 0; i < itemsOrdered.size(); i++) {
-            if (itemsOrdered.get(i).getTitle().equals(title)) {
+        for (Media media : itemsOrdered) {
+            if (media.getTitle().equals(title)) {
                 System.out.println("The disc with title " + title + " is in the cart");
                 return;
             }
@@ -55,14 +55,24 @@ public class Cart {
         System.out.println("The disc with title " + title + " is not in the cart");
     }
     public void SearchById(int id) {
-        for (int i = 0; i < itemsOrdered.size(); i++) {
-            if (itemsOrdered.get(i).getId() == id) {
+        for (Media media : itemsOrdered) {
+            if (media.getId() == id) {
                 System.out.println("The disc with ID " + id + " is in the cart");
                 return;
             }
         }
         System.out.println("The disc with ID " + id + " is not in the cart");
     }
+    public void sortByTitle() {
+        itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
+        System.out.println("Cart has been sorted by title.");
+    }
+
+    public void sortByCost() {
+        itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
+        System.out.println("Cart has been sorted by cost.");
+    }
+
     public void print() {
         System.out.println("Ordered Items:");
 
