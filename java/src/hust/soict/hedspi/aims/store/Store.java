@@ -5,6 +5,11 @@ import java.util.ArrayList;
 
 public class Store {
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+
+    public Store() {
+        this.itemsInStore = new ArrayList<Media>();
+    }
+
     public void addMedia(Media media) {
         if (itemsInStore.contains(media)) {
             System.out.println("The media " + media.getTitle() + " is already in the store");

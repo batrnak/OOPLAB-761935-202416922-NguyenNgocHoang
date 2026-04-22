@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class Cart {
     public static final int MAX_NUMBER_ORDERED = 20;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ArrayList<Media> itemsOrdered =new ArrayList<Media>();
+
+    public Cart() {
+        this.itemsOrdered = new ArrayList<Media>();
+    }
 
     public void addMedia(Media media) {
         if (itemsOrdered.size() < MAX_NUMBER_ORDERED) {

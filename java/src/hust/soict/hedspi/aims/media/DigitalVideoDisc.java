@@ -5,28 +5,25 @@ public class DigitalVideoDisc extends Disc implements Playable{
     public static int getNbDigitalVideoDiscs() {
         return nbDigitalVideoDiscs;
     }
-    public static void setNbDigitalVideoDiscs(int nbDigitalVideoDiscs) {
-        DigitalVideoDisc.nbDigitalVideoDiscs = nbDigitalVideoDiscs;
+
+    private static int nextId() {
+        return ++nbDigitalVideoDiscs;
     }
     // constructor
 
     public DigitalVideoDisc(String title) {
-        super(null, 0, title, null, 0, 0);
-        this.setId(++nbDigitalVideoDiscs);
+        super(null, 0, title, null, 0, nextId());
     }
     public DigitalVideoDisc(String category,String title, float cost) {
-        super(null, 0, title, category, cost, 0);
-        this.setId(++nbDigitalVideoDiscs);
+        super(null, 0, title, category, cost, nextId());
     }
 
     public DigitalVideoDisc(String director,String category,  String title, float cost) {
-        super(director, 0, title, category, cost, 0);
-        this.setId(++nbDigitalVideoDiscs);
+        super(director, 0, title, category, cost, nextId());
     }
 
     public DigitalVideoDisc(String category, float cost, String director, int length, String title) {
-        super(director, length, title, category, cost, 0);
-        this.setId(++nbDigitalVideoDiscs);
+        super(director, length, title, category, cost, nextId());
     }
     @Override
     public void play() {
