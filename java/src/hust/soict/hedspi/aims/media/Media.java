@@ -11,6 +11,14 @@ public abstract class Media {
         this.category = category;
         this.cost = cost;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Media) {
+            Media media = (Media) o;
+            return this.title == media.getTitle();
+        }
+        return false;
+    }
 
 
     public static void main(String[] args) {
