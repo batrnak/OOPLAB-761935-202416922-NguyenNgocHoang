@@ -6,6 +6,10 @@ import java.util.List;
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
 
+    public Book(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
+    }
+
     public List<String> getAuthors() {
         return authors;
     }
@@ -28,8 +32,5 @@ public class Book extends Media {
         } else {
             System.out.println("The author " + authorName + " is not in the list");
         }
-    }
-    public Book(){
-        //TODO
     }
 }
