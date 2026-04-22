@@ -1,0 +1,8 @@
+1.Lớp cha Media nên là lớp thực thi implement Comparable. Vì Cart đang lưu trữ một danh sách các đối tượng Media chung, việc cấu hình tại lớp cha sẽ giúp toàn bộ các lớp con (CD, DVD, Book) có chung một tiêu chuẩn để tự so sánh lẫn nhau.
+
+2. Vì Comparable chỉ cho phép một tiêu chuẩn sắp xếp mặc định, ta chỉ có thể chọn một trong hai quy tắc đề bài giao. Giả sử chọn quy tắc Tiêu đề (A-Z) -> Giá (giảm dần):
+Bên trong phương thức compareTo(), hệ thống sẽ ưu tiên so sánh tiêu đề của hai đối tượng theo bảng chữ cái trước. Nếu tiêu đề khác biệt, hệ thống dùng luôn kết quả đó. Chỉ khi tiêu đề hoàn toàn giống nhau, hệ thống mới tiếp tục lấy thuộc tính cost ra để so sánh và thiết lập theo chiều giảm dần.
+
+3. Không. Interface Comparable chỉ cho phép định nghĩa một thứ tự tự nhiên duy nhất cho một lớp. Vì phương thức compareTo() được viết cố định bên trong bản thân lớp đó, ta không thể linh hoạt đổi qua đổi lại giữa 2 quy tắc được. Đó là lý do hệ thống đòi hỏi nhiều kiểu sắp xếp bắt buộc phải dùng interface Comparator.
+
+4. Ta sẽ cần ghi đè lại phương thức compareTo() riêng bên trong lớp con DigitalVideoDisc. Logic xử lý bên trong sẽ là: Trước tiên phải kiểm tra xem đối tượng đang được mang ra so sánh có đúng là một DVD khác hay không. Nếu đúng, ta lần lượt so sánh theo 3 mốc: tiêu đề theo bảng chữ cái, nếu trùng thì xét đến length giảm dần, và cuối cùng nếu vẫn trùng thì xét đến cost tăng dần. Trường hợp đối tượng đem ra so sánh không phải là DVD (ví dụ là Book), ta sẽ gọi lại quy tắc compareTo() gốc của lớp cha Media để xử lý.
