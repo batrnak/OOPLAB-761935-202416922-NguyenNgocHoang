@@ -26,4 +26,20 @@ public class Store {
             System.out.println("The media " + media.getTitle() + " is not in the store");
         }
     }
+    public Media search(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
+
+    public void printStore() {
+        System.out.println("\n********** STORE **********");
+        for (int i = 0; i < itemsInStore.size(); i++) {
+            System.out.println((i+1) + ". " + itemsInStore.get(i).toString());
+        }
+        System.out.println("***************************");
+    }
 }
