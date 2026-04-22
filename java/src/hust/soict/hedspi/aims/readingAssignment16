@@ -1,0 +1,14 @@
+1. Tính đa hình mang lại những lợi thế vô cùng lớn trong lập trình hướng đối tượng:
+- Tính mở rộng: Hệ thống rất dễ mở rộng. Bạn có thể thêm các loại phương tiện mới (ví dụ: lớp Podcast, Magazine kế thừa từ Media) mà không cần phải thay đổi mã nguồn của vòng lặp xử lý hay cấu trúc lớp cha. Hệ thống vẫn tự động hiểu và gọi đúng hàm toString() của lớp mới.
+- Tái sử dụng mã: Cho phép lập trình viên viết một đoạn code duy nhất để xử lý chung cho nhiều kiểu dữ liệu khác nhau. Ví dụ: chỉ cần một mảng List<Media> thay vì phải tạo ba mảng riêng biệt cho CD, DVD, và Book.
+- Giảm sự phụ thuộc: Các thành phần tương tác với nhau thông qua lớp giao tiếp chung (lớp cha/interface) thay vì phụ thuộc vào các lớp chi tiết.
+2.Kế thừa chính là nền tảng bắt buộc để tạo ra tính đa hình trong Java:
+- Cung cấp kiểu dữ liệu chung (Upcasting): Nhờ có quan hệ "is-a" do kế thừa tạo ra, một biến tham chiếu của lớp cha có thể trỏ đến đối tượng của lớp con (Ví dụ: Media m = new Book()). Nếu không có kế thừa, việc cho các đối tượng khác nhau vào cùng một mảng ArrayList<Media> là bất khả thi.
+- Cơ chế Ghi đè: Kế thừa cho phép lớp cha định nghĩa một phương thức "khuôn mẫu" (ví dụ: toString()), sau đó các lớp con sẽ ghi đè lại để cung cấp cách thực thi riêng biệt. Java sẽ dựa vào mối quan hệ kế thừa này để xác định động xem phương thức của lớp nào sẽ được gọi lúc chương trình chạy.
+3. Sự khác biệt giữa Đa hình và Kế thừa trong Java:
+- Về bản chất và mục đích:  
++ Kế thừa là cơ chế định hình cấu trúc. Nó cho phép một lớp con thừa hưởng lại các thuộc tính và phương thức từ lớp cha để tái sử dụng mã nguồn, tránh việc phải viết lại code nhiều lần. Nó tạo ra mối quan hệ "is-a".
++ Đa hình là cơ chế định hình hành vi. Nó cho phép một giao diện hoặc một phương thức chung có thể được thực thi theo nhiều cách khác nhau tùy thuộc vào đối tượng đang gọi nó, giúp mã nguồn linh hoạt và dễ mở rộng hơn.
+- Về trọng tâm và thời điểm hoạt động: 
++ Kế thừa tập trung vào mức độ Lớp và thường được xác định rõ ràng ngay từ lúc lập trình viên thiết kế hệ thống.
++ Đa hình lại tập trung vào mức độ Đối tượng và hành vi của chúng. Nó thể hiện rõ ràng nhất khi chương trình đang chạy, hệ thống sẽ tự động quyết định cách xử lý phù hợp dựa trên đối tượng thực tế.
