@@ -1,0 +1,14 @@
+1.3) Compare Swing and AWT elements:
+- Top-level container:
+   + AWT: Frame, Dialog, Applet, Window
+   + Swing: JFrame, JDialog, JApplet, JWindow
+- Components:
+   + AWT: Button, Label, TextField, Checkbox, List,..
+   + Swing: JButton, JLabel, JTextField, JCheckBox, JList,..
+   + Swing thêm J ở đầu mỗi component để phân biệt với AWT
+- event handling:
+   + AWT: sử dụng event listeners và event objects để xử lý sự kiện, ví dụ: ActionListener, MouseListener,...
+   + Swing: cũng sử dụng event listeners và event objects, nhưng có thêm các sự kiện mới như ChangeEvent, DocumentEvent,...
+- giao diện:
++ AWT: phụ thuộc vào hệ điều hành, có thể không đồng nhất trên các nền tảng khác nhau
++ Swing: có giao diện đồng nhất trên tất cả các nền tảng, không phụ thuộc vào hệ điều hành, sử dụng Look and Feel để tùy chỉnh giao diện người dùng.
